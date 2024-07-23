@@ -1,11 +1,14 @@
 import { Router } from 'express';
+import { StatusCodes } from 'http-status-codes';
 
 import packageJson from '../../package.json';
 
 export const baseRoute = Router();
 
-baseRoute.use('/', (_, res) => {
+baseRoute.get('/', (_, res) => {
   const { name, version, description, author } = packageJson;
 
-  return res.status(200).json({ name, version, description, author });
+  return res
+    .status(StatusCodes.OK)
+    .json({ name, version, description, author });
 });
