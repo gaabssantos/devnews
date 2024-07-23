@@ -7,6 +7,8 @@ import 'dotenv/config';
 
 setupMongo().then(() => {
   const app = express();
+  app.use(express.json());
+
   const port = 3001;
   app.use(router);
 
