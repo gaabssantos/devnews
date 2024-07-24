@@ -1,18 +1,21 @@
 import express from 'express';
 
 import { setupMongo } from './database';
+import { errorHandler } from './middlewares/error-handler.middleware';
 import { router } from './routes/routes';
 
 import 'dotenv/config';
 
 setupMongo().then(() => {
   const app = express();
+
+  const port = process.env.PORT;
+
   app.use(express.json());
-
-  const port = 3001;
   app.use(router);
+  app.use(errorHandler);
 
-  app.listen(port, () => {
+  app.listen(port || 3001, () => {
     console.log(`Server has started in port ${port}.`);
   });
 });
