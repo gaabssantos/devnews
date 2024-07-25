@@ -8,7 +8,8 @@ export class PostController {
 
   create = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { title, content, image, category } = req.body;
+      const { title, content, category } = req.body;
+      const { filename: image } = req.file as Express.Multer.File;
 
       const postCreated = await this.postService.create({
         title,

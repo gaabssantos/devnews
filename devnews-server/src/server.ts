@@ -1,4 +1,5 @@
 import express from 'express';
+import { resolve } from 'path';
 
 import { setupMongo } from './database';
 import { errorHandler } from './middlewares/error-handler.middleware';
@@ -12,6 +13,8 @@ setupMongo().then(() => {
   const port = process.env.PORT;
 
   app.use(express.json());
+  app.use('/post-image', express.static(resolve(__dirname, '..', 'assets')));
+
   app.use(router);
   app.use(errorHandler);
 
