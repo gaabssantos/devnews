@@ -1,9 +1,11 @@
+import { POST_ENUM } from '../enums/post.enum';
+
 type PostProps = {
   _id?: string;
   title: string;
   content: string;
   image: string;
-  category: 'politic' | 'sports' | 'entertainment';
+  category: POST_ENUM;
 };
 
 export class PostEntity {
@@ -11,7 +13,7 @@ export class PostEntity {
   public title: string;
   public content: string;
   public image: string;
-  public category: string;
+  public category: POST_ENUM;
 
   constructor({ _id, title, content, image, category }: PostProps) {
     this._id = _id;

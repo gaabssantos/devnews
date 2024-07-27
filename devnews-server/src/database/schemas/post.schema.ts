@@ -1,5 +1,7 @@
 import mongoose, { Schema } from 'mongoose';
 
+import { POST_ENUM } from '../../enums/post.enum';
+
 const PostSchema = new Schema(
   {
     title: String,
@@ -7,7 +9,7 @@ const PostSchema = new Schema(
     image: String,
     category: {
       type: String,
-      enum: ['politic', 'sports', 'entertainment'],
+      enum: POST_ENUM,
     },
   },
   {
