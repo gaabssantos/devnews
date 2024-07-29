@@ -4,7 +4,7 @@ import jwt, { JwtPayload } from 'jsonwebtoken';
 
 import { AppError } from '../errors/app.error';
 
-interface MyUserRequest extends Request {
+export interface MyUserRequest extends Request {
   userId?: string;
   userEmail?: string;
 }
