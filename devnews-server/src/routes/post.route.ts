@@ -9,3 +9,4 @@ export const postRoute = Router();
 const postController = new PostController(PostFactory.getServiceInstance());
 
 postRoute.post('/', upload.single('file'), postController.create);
+postRoute.get('/:category', postController.findByCategory);

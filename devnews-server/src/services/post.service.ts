@@ -1,6 +1,7 @@
 import { PostRepository } from '../database/repositories/post.repository';
 import { PostDTO } from '../dtos/post.dto';
 import { PostEntity } from '../entities/post.entity';
+import { POST_ENUM } from '../enums/post.enum';
 
 export class PostService {
   constructor(private postRepository: PostRepository) {}
@@ -16,5 +17,11 @@ export class PostService {
     const postCreated = await this.postRepository.create(post);
 
     return postCreated;
+  };
+
+  findByCategory = async (category: string) => {
+    const posts = await this.postRepository.findByCategory(category);
+
+    return posts;
   };
 }

@@ -53,4 +53,16 @@ export class PostController {
       next(err);
     }
   };
+
+  findByCategory = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const { category } = req.params;
+
+      const posts = await this.postService.findByCategory(category);
+
+      return res.status(StatusCodes.OK).json(posts);
+    } catch (err) {
+      next(err);
+    }
+  };
 }

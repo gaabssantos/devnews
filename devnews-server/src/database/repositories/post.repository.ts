@@ -19,4 +19,12 @@ export class PostRepository {
 
     return postCreated.toObject<PostEntity>();
   };
+
+  findByCategory = async (category: string): Promise<PostEntity[]> => {
+    const posts = await this.postModel.find({ category });
+
+    const postsMap = posts.map((item) => item.toObject<PostEntity>());
+
+    return postsMap;
+  };
 }
