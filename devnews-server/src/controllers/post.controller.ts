@@ -14,7 +14,6 @@ export class PostController {
 
   create = async (req: MyUserRequest, res: Response, next: NextFunction) => {
     try {
-      // const { filename: image } = req.file.path;
       const { title, content, category } = req.body;
       let image = '';
 
