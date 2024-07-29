@@ -10,4 +10,4 @@ export const router = Router();
 router.use('/', baseRoute);
 router.use('/user', userRoute);
 router.use(authMiddleware);
-router.use('/post', postRoute);
+router.use('/posts', postRoute);
