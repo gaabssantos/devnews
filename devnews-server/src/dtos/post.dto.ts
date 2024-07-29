@@ -12,8 +12,10 @@ export type PostDTO = {
 export const postSchema = z.object({
   title: z.string().trim().min(5),
   content: z.string().trim().min(10).max(255),
-  image: z.string().optional(),
   category: z.nativeEnum(POST_ENUM),
+  image: z.custom<Express.Multer.File>(
+    (file) => file && typeof file === 'object' && 'fieldname' in file,
+  ),
 });
 
-export type PostInput = z.infer<typeof postSchema>;
+export type FormData = z.infer<typeof postSchema>;
