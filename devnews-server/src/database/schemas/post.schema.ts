@@ -1,16 +1,13 @@
 import mongoose, { Schema } from 'mongoose';
 
-import { POST_ENUM } from '../../enums/post.enum';
+import { CategorySchema } from './category.schema';
 
 const PostSchema = new Schema(
   {
     title: String,
     content: String,
     image: String,
-    category: {
-      type: String,
-      enum: POST_ENUM,
-    },
+    category: CategorySchema,
   },
   {
     versionKey: false,

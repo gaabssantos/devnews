@@ -1,7 +1,6 @@
 import { PostRepository } from '../database/repositories/post.repository';
 import { PostDTO } from '../dtos/post.dto';
 import { PostEntity } from '../entities/post.entity';
-import { POST_ENUM } from '../enums/post.enum';
 
 export class PostService {
   constructor(private postRepository: PostRepository) {}
