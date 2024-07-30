@@ -2,9 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 import cloudinary from '../config/cloudinary.config';
-import { CategoryRepository } from '../database/repositories/category.repository';
 import { UserRepository } from '../database/repositories/user.respository';
-import { CategoryModel } from '../database/schemas/category.schema';
 import { UserModel } from '../database/schemas/user.schema';
 import { AppError } from '../errors/app.error';
 import { MyUserRequest } from '../middlewares/auth.middleware';

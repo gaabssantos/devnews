@@ -10,3 +10,4 @@ const categoryController = new CategoryController(
 );
 
 categoryRoute.post('/', categoryController.create);
+categoryRoute.get('/', categoryController.index);

@@ -17,4 +17,14 @@ export class CategoryController {
       next(err);
     }
   };
+
+  index = async (_: Request, res: Response, next: NextFunction) => {
+    try {
+      const categories = await this.categoryService.index();
+
+      return res.status(StatusCodes.OK).json(categories);
+    } catch (err) {
+      next(err);
+    }
+  };
 }
