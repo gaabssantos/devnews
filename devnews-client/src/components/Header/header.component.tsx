@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Category } from '../../services/api-types';
 import { APIService } from '../../services/api.service';
-import { Button } from '../global.component';
+import { Button } from '../global.styles';
 import { Container } from './header.styles';
 
 import Logo from '/devnews.svg';
