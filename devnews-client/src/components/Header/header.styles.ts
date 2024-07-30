@@ -28,4 +28,17 @@ export const Container = styled.nav`
       text-decoration: underline;
     }
   }
+
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    ul {
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin: 3rem 0;
+    }
+  }
 `;
