@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 
 import { setupMongo } from './database';
@@ -11,6 +12,7 @@ setupMongo().then(() => {
 
   const port = process.env.PORT;
 
+  app.use(cors({ origin: process.env.BASE_URL }));
   app.use(express.json());
 
   app.use(router);

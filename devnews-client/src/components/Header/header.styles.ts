@@ -14,7 +14,7 @@ export const Container = styled.nav`
   ul {
     list-style-type: none;
     display: flex;
-    gap: 8rem;
+    gap: 5rem;
     text-align: center;
     font-size: ${fonts.sizes.small};
     font-weight: 500;
@@ -22,6 +22,7 @@ export const Container = styled.nav`
 
   ul li {
     cursor: pointer;
+    text-transform: capitalize;
 
     &:hover {
       text-decoration: underline;
