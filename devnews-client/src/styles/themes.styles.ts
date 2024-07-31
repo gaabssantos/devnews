@@ -6,6 +6,7 @@ export default {
     gradiant:
       'linear-gradient(180deg, rgba(0, 84, 161, 0.64) 0%, rgba(0, 84, 161, 0.00) 100%)',
     white: '#FFFFFF',
+    whitef2f2f2: '#f2f2f2',
     black: '#000000',
   },
   fonts: {
