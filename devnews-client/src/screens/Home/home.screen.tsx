@@ -1,7 +1,9 @@
+import TopInformations from '../../components/TopInformations/top-informations.component';
+
 const Home = () => {
   return (
     <div>
-      <h1>Hello!</h1>
+      <TopInformations />
     </div>
   );
 };
