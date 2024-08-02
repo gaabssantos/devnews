@@ -4,8 +4,9 @@ import { Category } from '../../services/api-types';
 import { APIService } from '../../services/api.service';
 
 import Logo from '/devnews.svg';
+
 import '../global.styles.sass';
-import './header.styles.sass';
+import styles from './header.module.sass';
 
 const Header = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -21,7 +22,7 @@ const Header = () => {
   });
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       <img src={Logo} alt="logo-devnews" />
       <ul>
         {categories.map((category) => (
