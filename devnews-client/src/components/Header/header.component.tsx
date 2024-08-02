@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 
 import { Category } from '../../services/api-types';
 import { APIService } from '../../services/api.service';
-import { Button } from '../global.styles';
-import { Container } from './header.styles';
 
 import Logo from '/devnews.svg';
+import '../global.styles.sass';
+import './header.styles.sass';
 
 const Header = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -21,15 +21,15 @@ const Header = () => {
   });
 
   return (
-    <Container>
+    <div className="container">
       <img src={Logo} alt="logo-devnews" />
       <ul>
         {categories.map((category) => (
           <li key={category._id}>{category.name}</li>
         ))}
       </ul>
-      <Button>Login</Button>
-    </Container>
+      <button className="button">Login</button>
+    </div>
   );
 };
 

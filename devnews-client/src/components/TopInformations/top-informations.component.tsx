@@ -1,20 +1,26 @@
 import { IoCloudyNightSharp, IoSearchOutline } from 'react-icons/io5';
 
-import { Container, InputControl } from './top-informations.styles';
+import DateFormatted from '../../utils/date.util';
+
+import './top-informations.styles.sass';
 
 const TopInformations = () => {
   return (
-    <Container>
+    <div className="top-container">
       <div className="weather">
-        <IoCloudyNightSharp />
-        <p>21° São Paulo, SP</p>
+        <IoCloudyNightSharp className="cloud" />
+        <p className="weather-text">21° São Paulo, SP</p>
       </div>
-      <InputControl>
+      <div className="input-control">
         <IoSearchOutline className="search" />
-        <input type="text" placeholder="Pesquise por notícias" />
-      </InputControl>
-      <p>31 de Julho de 2023</p>
-    </Container>
+        <input
+          type="text"
+          placeholder="Pesquise por notícias"
+          className="search-news"
+        />
+      </div>
+      <p className="date">{DateFormatted()}</p>
+    </div>
   );
 };
 
