@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import { Category } from '../../services/api-types';
 import { APIService } from '../../services/api.service';
+import styles from './header.module.sass';
 
 import Logo from '/devnews.svg';
 
 import '../global.styles.sass';
-import styles from './header.module.sass';
 
 const Header = () => {
   const [categories, setCategories] = useState<Category[]>([]);
